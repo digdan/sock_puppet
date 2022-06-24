@@ -18,3 +18,9 @@ You can then send messages to your websocket by mapping stdin/stdout to the sock
 
 
 This will send a "context" to the websocket clients. This context is used as an exchangable variable scope.
+
+
+## Why?
+This tool isn't intended for any scalability or production use. This tool is simply used during development to push variable contexts up to a website.
+
+The reason for this tool was originally to test out different mapping algorithms. When doing so, it would not be worth the time to create a full or robust API integrations. I wanted something very losley coupled and instant. I was also looking for something very lightweight on the algorithms themselves. Reading/writing from STDIN/STDOUT is a light as it gets :D
