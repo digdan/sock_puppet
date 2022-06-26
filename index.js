@@ -51,7 +51,7 @@ socketServer.on("connection", (websocket, request) => {
   if (lastContext) {
     websocket.send(lastContext.toString());
   }
-  clients.push(websocket);
+  clients.add(websocket);
 });
 
 server.on("upgrade", (request, socket, head) => {

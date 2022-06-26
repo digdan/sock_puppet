@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sock Puppet Client Example</title>
+    <meta
+      name="description"
+      content="An example page of how a socket puppet client would work"
+    />
+  </head>
+  <body>
+    <h1>Sock Puppet Client Example:</h1>
+    <div id="output">Loading...</div>
+  </body>
+  <script language="javascript">
+    var exampleSocket = new WebSocket("ws://192.168.1.164:8686/");
+    exampleSocket.onmessage = function (event) {
+      var context = JSON.parse(event.data);
+      doUpdate(context);
+    };
+
+    function doUpdate(context) {
+      document.getElementById(
+        "output"
+      ).innerHTML = `Last context update occured at ${new Date(context.now)}`;
+    }
+  </script>
+</html>
